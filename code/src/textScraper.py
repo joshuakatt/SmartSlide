@@ -47,8 +47,6 @@ for x in range(len(pptData)):
         pass
 
 
-
-
 def thread_function(name):
     logging.info("Thread %s: starting", name)
 
