@@ -1,10 +1,10 @@
 import random
 import time
-
+import sys
 import speech_recognition as sr
 
 listen = True
-
+speechBank = []
 
 def recognize_speech_from_mic(recognizer, microphone):
     """Transcribe speech from recorded from `microphone`.
@@ -78,15 +78,18 @@ if __name__ == "__main__":
                     break
                 print("I didn't catch that. What did you say?\n")
 
-        if guess["transcription"] == "quit":
+        if "quit" in guess["transcription"]:
             listen = False
-            break
+            sys.exit()
         if guess["error"]:
             print("ERROR: {}".format(guess["error"]))
             break
 
             # show the user the transcription
         print("You said: {}".format(guess["transcription"]))
+        speechBank.append(guess["transcription"])
+        print(speechBank)
+
 
     
 
@@ -118,7 +121,7 @@ stop_listening = r.listen_in_background(m, callback)
 # `stop_listening` is now a function that, when called, stops background listening
 
 # do some unrelated computations for 5 seconds
-for _ in range(50):
+for _ in range(20):
     # we're still listening even though the main thread is doing other things
     time.sleep(0.1)
 
