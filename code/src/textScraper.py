@@ -6,6 +6,7 @@ import textrazor
 import logging
 import threading
 import time
+import subprocess
 
 
 pptData = []
@@ -14,8 +15,22 @@ pptData = []
 razor_API_KEY = "9224bb6f01f35cb07f2ec8b1c7ca780f397685e30b95d517a3eaeaee"
 textrazor.api_key = razor_API_KEY
 client = textrazor.TextRazor(extractors=["entities", "topics"])
+ppt_path = "/Users/joshuakattapuram/Developer/AI-presentation-handler/code/src/text_test1.pptx"
 
-for eachfile in glob.glob("text_test1.pptx"):
+command = f'''
+tell application "Terminal"
+    activate
+    do script "open -a 'Microsoft PowerPoint' '{ppt_path}'"
+end tell
+'''
+
+process = subprocess.Popen(["osascript", "-e", command], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+output, error = process.communicate()
+
+if error:
+    print("Error:", error.decode())
+
+for eachfile in glob.glob(ppt_path):
     prs = Presentation(eachfile)
     print(eachfile)
     print("----------------------")
