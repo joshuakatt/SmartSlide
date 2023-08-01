@@ -1,0 +1,5 @@
+textrazor
+python-pptx
+scikit-learn
+speechrecognition
+urllib3==1.26.7
