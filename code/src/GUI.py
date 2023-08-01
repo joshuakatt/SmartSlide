@@ -8,6 +8,11 @@ class Application(tk.Frame):
         self.pack()
         self.create_widgets()
 
+    def update_log(self, text):
+        # Insert the text at the end and then see it
+        self.log_text.insert(tk.END, text + '\n')
+        self.log_text.see(tk.END)
+
     def create_widgets(self):
         self.browse_ppt = tk.Button(self)
         self.browse_ppt["text"] = "Browse PPT"
