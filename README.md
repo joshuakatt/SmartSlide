@@ -5,6 +5,10 @@ ML and NLP potential as well.
 
 [Read project summary here](https://docs.google.com/document/d/1dNYObyIvnDCIOuAc87xepQCzqanczHepbfcnmVm-NP8/edit?usp=sharing)
 
+<p align="center">
+  <img src="images/read_me_0.png" alt="Screenshot 2" width="50%" height="50%">
+</p>
+
 To run:
 
 1) Fork the repo
