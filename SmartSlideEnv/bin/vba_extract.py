@@ -1,4 +1,4 @@
-#!/Users/joshuakattapuram/Developer/AI-presentation-handler/SmartSlideEnv/bin/python3
+#!/Users/joshuakattapuram/Developer/AI-presentation-handler/SmartSlideEnv/bin/python3.11
 
 ##############################################################################
 #

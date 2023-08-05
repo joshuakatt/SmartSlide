@@ -3,3 +3,5 @@ python-pptx
 scikit-learn
 speechrecognition
 urllib3==1.26.7
+pyaudio
+#python-tk==3.9
